@@ -1,0 +1,24 @@
+<form>
+	<div class="qstn" id="obj1">{{index+1}}.{{Question1}}<br>
+<select class="inputText1" ng-model="requiredField1" required="required">
+	<option ng-repeat="an in ans">{{an.ques}}</option>
+</select>&nbsp;&nbsp;&nbsp;<b id="obj0"></b>
+	</div>
+	<div class="qstn" id="obj2">{{index+2}}.{{Question2}}<br>
+<select class="inputText1" ng-model="requiredField2" required="required">
+	<option ng-repeat="an in ans1">{{an.ques}}</option>
+</select>&nbsp;&nbsp;&nbsp;<b id="obj00"></b>
+</div>
+	<div class="qstn" id="obj3">{{index+3}}.{{Question3}}<br>
+<select class="inputText1" ng-model="requiredField3" required="required">
+	<option ng-repeat="an in ans2">{{an.ques}}</option>
+</select>&nbsp;&nbsp;&nbsp;<b id="obj000"></b>
+</div>
+	<div class="qstn" id="obj4">{{index+4}}.{{Question4}}<br>
+<select class="inputText1" ng-model="requiredField4" required="required">
+	<option ng-repeat="an in ans3">{{an.ques}}</option>
+</select>&nbsp;&nbsp;&nbsp;<b id="obj0000"></b>
+</div>
+<input type="submit" value="Submit" class="btn" ng-click="login()">
+ <button type="reset" value="Reset" ng-click="resetform()" class="btn">Clear</button>
+	</form>
