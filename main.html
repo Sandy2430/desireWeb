@@ -1,4 +1,5 @@
-<form>
+<form name="form1">
+<h1 class="heading">Tricky Quize</h1>
 	<div class="qstn" id="obj1">{{index+1}}.{{Question1}}<br>
 <select class="inputText1" ng-model="requiredField1" required="required">
 	<option ng-repeat="an in ans">{{an.ques}}</option>
@@ -20,5 +21,5 @@
 </select>&nbsp;&nbsp;&nbsp;<b id="obj0000"></b>
 </div>
 <input type="submit" value="Submit" class="btn" ng-click="Submit();">
- <button type="reset" value="Reset" ng-click="resetform()" class="btn">Clear</button>
+ <button type="reset" value="Reset" class="btn" ng-click="clear();">Clear</button>
 	</form>

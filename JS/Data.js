@@ -26,43 +26,8 @@ controller:'myController'
 
 
 app.controller('myController',['$scope','$location','barChartServices',function($scope,$location,barChartServices){
-	//console.log($scope);
-	//console.log($location);
-	//console.log(Bservices);
-	/*$scope.myDataSource = {
-        "chart": {
-            "caption": "Quize",
-            "subCaption": "",
-            "xAxisName": "",
-            "yAxisName": "values in number",
-            "numberSuffix": "%",
-            "theme": "fusion",
-			
-        },
-        "data": [
-            { "label": "Correct", "value":"4" },
-            { "label": "Incorrect", "value":"0" }
-			
-		   
-        ]};*/
-	$scope.myDataSource1 = {
-        "chart": {
-			"bgColor": "EEEEEE,CCCCCC",
-            "caption": "Quize",
-            "subCaption": "",
-            "xAxisName": "",
-            "yAxisName": "values in number",
-            "numberSuffix": "",
-            "theme": "fusion",
-			
-        },
-        "data": [
-            { "label": "Correct", "value":"0" },
-            { "label": "Incorrect", "value":"0" }
-			
-		   
-        ]};
-		
+	
+//Quize questions		
 	$scope.Question1="Google launched the latest version of the Android operating system, It is names as";
 	$scope.Question2="Which team has won the 2018 Cotif Cup football tournament?";
 	$scope.Question3="With which country India collaborate to strengthen sectors of agriculture, health & environment?";
@@ -87,6 +52,8 @@ app.controller('myController',['$scope','$location','barChartServices',function(
 					{ques:"Japonica Rice"},
 					{ques:"Thai Fragrant Rice"},
 					{ques:"Gobindobhog rice"}];	
+	
+//Validation function to pop up error messages			
     function validation(){
 			var Field1=$scope.requiredField1;
 			var Field2=$scope.requiredField2;
@@ -132,7 +99,7 @@ app.controller('myController',['$scope','$location','barChartServices',function(
 			}
 			
    }
-   
+   // Second validation function for validating the right answers
    function validation2(){
 			var Field1=$scope.requiredField1;
 			var Field2=$scope.requiredField2;
@@ -154,21 +121,42 @@ app.controller('myController',['$scope','$location','barChartServices',function(
 			  
 
         }
-		
-   $scope.Submit=function(){
-   validation();
-   validation2();
+$scope.myDataSource1 = {
+        "chart": {
+			"bgColor": "EEEEEE,CCCCCC",
+            "caption": "Quize",
+            "subCaption": "",
+            "xAxisName": "",
+            "yAxisName": "values in number",
+            "numberSuffix": "",
+            "theme": "fusion",
+			
+        },
+        "data": [
+            { "label": "Correct", "value":"0" },
+            { "label": "Incorrect", "value":"0" }
+			
+		   
+        ]};		
+//Submit function		
+$scope.Submit=function(){
+               validation();
+               validation2();
    }
+//function to get back to home page 
 $scope.back=function(){
 	$location.path('/main');
 }
+//cleaning up the bart chart values
 $scope.resetChart=function(){
 		$location.path('/barchart1');
 	
 }
 }]);
+
+//Second Controller for bar chart displaying
 app.controller("barChartController",['$scope','barChartServices',function($scope,barChartServices){
-	//console.log(barChartServices);
+						//console.log(barChartServices);
 $scope.myDataSource = {
         "chart": {
 			"bgColor": "EEEEEE,CCCCCC",
@@ -192,6 +180,7 @@ $scope.myDataSource = {
 	
 	
 }]);
+//User define Service to calculate number of right and wrong answers.
 app.service('barChartServices', function() {
       this.correctValue = "";
 	  this.IncorrectValue = "";
